@@ -1,5 +1,5 @@
 import * as debugLogger from "debug-logger";
-import * as EventEmitter from "eventemitter3";
+import EventEmitter from "eventemitter3";
 import { ChatClient } from "../client/client";
 import {
   hasAllStateTags,
@@ -10,7 +10,7 @@ import { ClientMixin } from "./base-mixin";
 
 const log = debugLogger("dank-twitch-irc:roomstate-tracker");
 
-export interface RoomStateTrackerEvents {
+export type RoomStateTrackerEvents = {
   newChannelState: [string, RoomState];
   [idx: string]: any;
 }
